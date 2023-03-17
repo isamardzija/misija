@@ -1,0 +1,24 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+const { title, content, image } = Astro.props;
+
+export async function getStaticPaths() {
+  let data = await fetch("https://cms.udrugamisija.hr/api/posts");
+  let posts = await data.json();
+
+  return posts.docs.map((post) => {
+    return {
+      params: { slug: post.id },
+      props: { title: post.title, content: post.content, image: post.image.sizes.thumbnail.url },
+    };
+  });
+}
+---
+
+<MainLayout title={title}>
+  <article>
+    <h1>{title}</h1>
+    <img src={image} />
+    <p>{content}</p>
+  </article>
+</MainLayout>

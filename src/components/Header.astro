@@ -1,0 +1,37 @@
+---
+import logo from '../images/branding/MiSiJa-logo.png'
+---
+<header>
+  <nav>
+    <a href="/"><img src={logo} alt="Logo udruge MiSiJa"></a>
+    <ul>
+      <li><a href="/onama">O nama</a></li>
+      <li>
+        <a href="/projekti-i-aktivnosti"
+          >Projekti i aktivnosti</a>
+      </li>
+      <li><a href="/novosti">Novosti</a></li>
+      <li><a href="/kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    padding: 1rem;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+
+  }
+  img {
+    max-width: 100px;
+  }
+</style>

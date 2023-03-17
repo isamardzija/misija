@@ -1,0 +1,22 @@
+---
+const { list1, list2, list3, list4 } = Astro.props;
+const listItems = [list1, list2, list3, list4];
+
+---
+
+<ul>
+  {
+    listItems.map((item) => (
+      <li>
+        <img src={item.image} alt={item.alt} />
+        <p>{item.text}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+    img {
+        max-width: 400px;
+    }
+</style>
