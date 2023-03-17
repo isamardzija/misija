@@ -16,7 +16,9 @@ const posts = await res.json();
       posts.docs.map((post) => (
         <article>
           <h2>{post.title}</h2>
-          <img src={post.image.sizes.thumbnail.url} />
+          <img src={post.image.sizes.tablet.url} />
+          <span>Autor: {post.author.name}</span>
+          <span>{post.createdAt}</span>
           <p>{post.content.slice(0, 200)}...</p>
           <a href={`novosti/${post.id}`}>Pročitaj više...</a>
         </article>
@@ -29,10 +31,11 @@ const posts = await res.json();
     main {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
     }
     article {
-        flex-basis: calc(33% - 1rem);
+        flex-basis: max(33%, 500px);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;

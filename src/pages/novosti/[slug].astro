@@ -1,6 +1,6 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-const { title, content, image } = Astro.props;
+const { title, content, image, author, date } = Astro.props;
 
 export async function getStaticPaths() {
   let data = await fetch("https://cms.udrugamisija.hr/api/posts");
@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   return posts.docs.map((post) => {
     return {
       params: { slug: post.id },
-      props: { title: post.title, content: post.content, image: post.image.filename  },
+      props: { title: post.title, content: post.content, image: post.image.filename, author: post.author.name, date: post.createdAt  },
     };
   });
 }
@@ -18,6 +18,8 @@ export async function getStaticPaths() {
 <MainLayout title={title}>
   <article>
     <h1>{title}</h1>
+    <span>Autor: {author}</span>
+    <span>{date}</span>
     <img src={ `https://cms.udrugamisija.hr/media/${image}`} />
     <p>{content}</p>
     <a href="/novosti">Povratak na Novosti</a>
