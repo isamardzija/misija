@@ -1,20 +1,42 @@
 ---
-const title = 'Novosti'
+const title = "Novosti";
 
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 
-const res = await fetch("https://cms.udrugamisija.hr/api/posts")
-const posts = await res.json()
+const res = await fetch("https://cms.udrugamisija.hr/api/posts");
+const posts = await res.json();
 ---
+
 <MainLayout title={title}>
-<Hero title={title} />
+  <Hero title={title} />
 
-<main>
-    {posts.docs.map((post) => (
-
-        <div><a href={`novosti/${post.id}`}>{post.title}</a></div>
-
-    ))}
-</main>
+  <main>
+    {
+      posts.docs.map((post) => (
+        <article>
+          <h2>{post.title}</h2>
+          <img src={post.image.sizes.thumbnail.url} />
+          <p>{post.content.slice(0, 200)}...</p>
+          <a href={`novosti/${post.id}`}>Pročitaj više...</a>
+        </article>
+      ))
+    }
+  </main>
 </MainLayout>
+
+<style>
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    article {
+        flex-basis: calc(33% - 1rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+</style>

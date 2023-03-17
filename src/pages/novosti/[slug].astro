@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   return posts.docs.map((post) => {
     return {
       params: { slug: post.id },
-      props: { title: post.title, content: post.content, image: post.image.sizes.thumbnail.url },
+      props: { title: post.title, content: post.content, image: post.image.filename  },
     };
   });
 }
@@ -18,7 +18,20 @@ export async function getStaticPaths() {
 <MainLayout title={title}>
   <article>
     <h1>{title}</h1>
-    <img src={image} />
+    <img src={ `https://cms.udrugamisija.hr/media/${image}`} />
     <p>{content}</p>
+    <a href="/novosti">Povratak na Novosti</a>
   </article>
 </MainLayout>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  img {
+  }
+</style>
