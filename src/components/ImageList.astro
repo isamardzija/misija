@@ -16,7 +16,24 @@ const listItems = [list1, list2, list3, list4];
 </ul>
 
 <style>
-    img {
-        max-width: 400px;
-    }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-400);
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-200);
+  }
+  li:nth-child(2n + 2) {
+    flex-direction: row-reverse;
+  }
+  li img {
+    max-width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: var(--borderradius-image);
+  }
+  
 </style>

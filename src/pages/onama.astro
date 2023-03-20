@@ -1,11 +1,90 @@
 ---
-const title = "O nama"
+const title = "O nama";
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
+import CallToAction from "../components/CallToAction.astro";
 
-import imageMisija from "../images/photos/misija.jpg"
+import imageMisija from "../images/photos/misija.jpg";
+import imageMisijaMajica from '../images/photos/misija-majica-natpis.jpg'
+import imageStand from '../images/photos/opcina-sikirevci.jpg'
+import imageIzlet from '../images/photos/misija-izlet-krizevci.jpg'
 ---
 
-<MainLayout title={title}> 
-    <Hero image={imageMisija} title={"Mi smo MiSiJa"}  />
+<MainLayout title={title}>
+  <Hero image={imageMisija} title={"Mi smo MiSiJa."} />
+  <ul>
+    <li>Ekipa za organizaciju.</li>
+    <li>Ekipa za promjene.</li>
+    <li>Ekipa za putovanja.</li>
+    <li>Ekipa za druženje.</li>
+    <li>Ekipa za učenje.</li>
+  </ul>
+  <article>
+    <h3>Što je MiSiJa?</h3>
+    <p>
+      Mladi iz Sikirevaca i Jaruga je naš službeni naziv, a svi nas znaju kao
+      “MiSiJa” - ekipa za promjene u općini Sikirevci. Nastali smo davne 2017.
+      godine, a od tada se bavimo organiziranjem kreativnih projekata, putujemo
+      i upoznajemo našu domovinu, družimo se i stječemo nova prijateljstva,
+      učimo, smišljamo, aktiviramo se u svojoj zajednici!
+    </p>
+  </article>
+  <article>
+    <img src={imageMisijaMajica} alt="Službena majica udruge MiSiJa">
+    <h3>Koji je cilj udruge MiSiJa?</h3>
+    <ul>
+      <li>
+        unaprjeđenje međusobne komunikacije mladih i njihovo umrežavanje s
+        ciljem jačanja samosvijesti mladih za aktivno i odgovorno sudjelovanje u
+        društvu
+      </li>
+      <li>
+        poticanje mladih na razvoj pozitivnih i konstruktivnih projekata u
+        njihovoj sredini
+      </li>
+      <li>
+        motiviranje mladih raznih profila i porijekla na ostvarivanje vlastitog
+        potencijala, utjecanje na oblikovanje i provedbu javne politike za mlade
+        usmjerene na poboljšanje kvalitete života
+      </li>
+    </ul>
+  </article>
+  <article>
+    <img src={imageIzlet} alt="Članovi udruge na izletu">
+    <h3>Čime se MiSiJa bavi?</h3>
+    <ul>
+      <li>Organiziramo brojne događaje na području naše općine</li>
+      <li>Družimo se i stječemo nova poznanstva preko naših partnera</li>
+      <li>Putujemo i upoznajemo našu domovinu</li>
+      <li>Unaprjeđujemo svoja znanja kroz raznorazne edukacije</li>
+    </ul>
+  </article>
+  <article>
+    <img src={imageStand} alt="Prodajni štand sa natpisom 'Općina Sikirevci'">
+    <h3>S kime MiSiJa surađuje?</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit repudiandae
+      illo autem debitis quasi tenetur nostrum aut placeat id perspiciatis,
+      perferendis aliquam iure repellendus culpa doloremque suscipit accusamus
+      incidunt fuga reprehenderit eum magni numquam deserunt laborum. Nulla enim
+      vero fuga? Repellendus a maiores fugit rerum, culpa molestias non officia
+      ullam facilis quibusdam ut possimus nam incidunt aperiam fuga consectetur
+      totam?
+    </p>
+  </article>
+  <section>
+    <h2>Osvrti</h2>
+  </section>
+  <article>
+    <h3>Tko može postati član udruge MiSiJa?</h3>
+    <p>
+      Pozivamo sve zainteresirane mlade iz općine Sikirevci da nam se pridruže.
+      Ako si stariji/ja od 15 godina i želiš postati članom udruge, pod hitno
+      nam se javi.
+    </p>
+  </article>
+  <CallToAction text="Želiš postati dio naše priče?" />
 </MainLayout>
+
+<style>
+</style>

@@ -1,6 +1,17 @@
 ---
 const {image, title, subtitle} = Astro.props
 ---
-{image && <img src={image} />}
-<h1>{title}</h1>
-{subtitle && <h2>{subtitle} </h2>}
+<section>
+    {image && <img src={image} />}
+    <h1>{title}</h1>
+    {subtitle && <h2>{subtitle} </h2>}
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+</style>

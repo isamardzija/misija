@@ -1,3 +1,8 @@
+---
+import InstagramIcon from "../images/icons/instagram.png"
+import FacebookIcon from "../images/icons/facebook.png"
+
+---
 <footer>
   <nav>
     <ul>
@@ -11,9 +16,9 @@
       <li><a href="/kontakt">Kontakt</a></li>
       <li>
         <a href="https://www.facebook.com/udrugamisija/"
-          ><img src="/images/icons/facebook.png" alt="Facebook Logo" /></a
+          ><img src={FacebookIcon} alt="Facebook Logo" /></a
         ><a href="https://www.instagram.com/udrugamisija/"
-          ><img src="/images/icons/instagram.png" alt="Instagram logo" /></a>
+          ><img src={InstagramIcon} alt="Instagram logo" /></a>
       </li>
     </ul>
   </nav>
@@ -22,10 +27,27 @@
 <style>
   footer {
     padding: 1rem;
+
   }
   ul {
     list-style-type: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
+    gap: var(--gap-200)
+  }
+  img {
+    height: 24px;
+    aspect-ratio: 1/1;
+  }
+  a {
+    text-decoration: none;
+    font-weight: var(--fontweight-600);
+    text-transform: uppercase;
+    color: var(--color-neutral-900);
+  }
+  li a:hover {
+    border-bottom: 2px solid var(--color-highlight)
   }
 </style>

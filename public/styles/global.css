@@ -1,11 +1,60 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+:root {
+  --color-highlight: #eb0208;
+  --color-neutral-000: #f7f7f7;
+  --color-neutral-900: #1e1e1e;
+
+  --fontfamily-primary: 'Inter', sans-serif;
+
+  --fontsize-400: 1rem;
+  --fontsize-600: 1.5rem;
+  --fontsize-800: 2.5rem;
+
+  --fontweight-400: 400;
+  --fontweight-600: 600;
+  --fontweight-800: 800;
+
+  --padding-200: 1rem;
+  --padding-400: 2rem;
+
+  --gap-200: 1rem;
+  --gap-400: 2rem;
+  --gap-600: 2.5rem;
+
+  --borderradius-button: 8px;
+  --borderradius-image: 12px;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+button, input {
+  font-family: inherit;
+}
+
+body {
+  background-color: var(--color-neutral-000);
+  color: var(--color-neutral-900);
+  font-family: var(--fontfamily-primary)
+}
+
+h1 {
+  font-size: var(--fontsize-800);
+  padding-block: var(--padding-200);
+}
+
+h2 {
+  font-size: var(--fontsize-600);
+  font-weight: var(--fontweight-400);
+}
 
 img {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
 }

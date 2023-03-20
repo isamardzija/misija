@@ -1,5 +1,6 @@
 ---
 import logo from '../images/branding/MiSiJa-logo.png'
+
 ---
 <header>
   <nav>
@@ -22,16 +23,32 @@ import logo from '../images/branding/MiSiJa-logo.png'
   }
   nav {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-  }
-  ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-
   }
   img {
     max-width: 100px;
+  }
+  ul {
+    list-style-type: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-200);
+  }
+  a {
+    text-decoration: none;
+    font-weight: var(--fontweight-600);
+    text-transform: uppercase;
+    color: var(--color-neutral-900);
+  }
+  li a:hover {
+    border-bottom: 2px solid var(--color-highlight)
+  }
+
+  @media screen and (min-width: 768px) {
+    nav, ul {
+      flex-direction: row;
+    }
   }
 </style>
