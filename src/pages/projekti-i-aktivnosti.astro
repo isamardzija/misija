@@ -17,21 +17,26 @@ import Hero from "../components/Hero.astro";
     title={title}
     subtitle={"MiSiJa iza sebe ima brojne projekte i aktivnosti."}
   />
-  <h2>Projekti</h2>
-  {projects.docs.map((post) => (
-
-    <article>
-      <h3>{post.title}</h3>
-      <span>Autor: {post.author.name}</span>
-      <span>{post.date}</span>
-      <img src={`https://cms.udrugamisija.hr/media/${post.image.filename}`} /> 
-      <p>{post.content}</p>
-      </article>
-      ))}
+  <section>
+    <h2>Projekti</h2>
+    {projects.docs.map((post) => (
+      <article>
+        <h3>{post.title}</h3>
+        <span>{post.date}</span>
+        <img src={`https://cms.udrugamisija.hr/media/${post.image.filename}`} />
+        <span>Autor: {post.author.name}</span>
+        <p>{post.content}</p>
+        </article>
+        ))}
+  </section>
   <h2>Aktivnosti</h2>
 </MainLayout>
 
 <style>
+  section {
+    max-width: 1366px;
+    margin: auto;
+  }
 
     article {
         flex-basis: max(33%, 500px);

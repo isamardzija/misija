@@ -7,13 +7,15 @@ import Hero from "../components/Hero.astro";
 
 <MainLayout title={title}>
   <script>
-    const uclaniSeForma = document.querySelector("#uclaniSe") as HTMLFormElement;
+    const uclaniSeForma = document.querySelector(
+      "#uclaniSe"
+    ) as HTMLFormElement;
     uclaniSeForma.addEventListener("submit", procUclanjenje);
     async function procUclanjenje(e) {
       e.preventDefault();
       const noviClanData = new FormData(uclaniSeForma);
       const uclaniSeButton = document.querySelector("#uclaniSeButton");
-  
+
       uclaniSeButton.textContent = "Šaljem...";
       try {
         const res = await fetch(
@@ -28,7 +30,7 @@ import Hero from "../components/Hero.astro";
         ).then((res) => res.json());
         uclaniSeForma.reset();
         uclaniSeButton.textContent = "Učlani se";
-  
+
         const successMessage = document.createElement("p");
         successMessage.classList.add("success");
         successMessage.textContent =
@@ -37,26 +39,65 @@ import Hero from "../components/Hero.astro";
       } catch (error) {
         console.log("Došlo je do pogreške!", error);
         uclaniSeButton.textContent = "Učlani se";
-  
+
         const errorMessage = document.createElement("p");
         errorMessage.classList.add("error");
         errorMessage.textContent = "Došlo je do pogreške!";
         uclaniSeForma.appendChild(errorMessage);
       }
     }
-  
   </script>
   <Hero title={title} />
   <main>
     <form action="#" class="uclaniSe" id="uclaniSe">
-      <label for="name">Tvoje ime</label>
-      <input type="text" name="name" id="uclaniseIme" required />
-      <label for="starost">Koliko imaš godina?</label>
-      <input type="number" name="age" id="uclaniseStarost" required />
-      <label for="email">Tvoja e-mail adresa</label>
-      <input type="email" name="email" id="uclaniseEmail" required />
+      <label for="name"
+        >Tvoje ime
+
+        <input type="text" name="name" id="uclaniseIme" required />
+      </label>
+      <label for="starost"
+        >Koliko imaš godina?
+
+        <input type="number" name="age" id="uclaniseStarost" required />
+      </label>
+      <label for="email"
+        >Tvoja e-mail adresa
+
+        <input type="email" name="email" id="uclaniseEmail" required />
+      </label>
       <button id="uclaniSeButton" type="submit">Učlani se</button>
     </form>
   </main>
- 
 </MainLayout>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-400);
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-000);
+    padding: var(--padding-400);
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-200);
+  }
+  input,
+  textarea {
+    padding: var(--padding-100);
+  }
+  button {
+    font-size: var(--fontsize-600);
+    padding: var(--padding-100);
+    background-color: var(--color-highlight);
+    color: var(--color-neutral-000);
+    border: none;
+    border-radius: var(--borderradius-button);
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+</style>

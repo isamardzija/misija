@@ -50,17 +50,55 @@ import Hero from "../components/Hero.astro";
   <Hero title={title} />
   <main>
     <form class="kontakt" id="kontakt">
-      <label for="name">Vaše ime</label>
-      <input type="text" name="name" id="kontaktIme" required />
-      <label for="email">Vaša e-mail adresa</label>
-      <input type="email" name="email" id="kontaktEmail" required />
-      <label for="sadrzaj">Poruka</label>
-      <textarea
+      <label for="name">Vaše ime
+
+        <input type="text" name="name" id="kontaktIme" required />
+      </label>
+      <label for="email">Vaša e-mail adresa
+
+        <input type="email" name="email" id="kontaktEmail" required />
+      </label>
+      <label for="sadrzaj">Poruka
+
+        <textarea
         name="message"
         id="kontaktSadrzaj"
         required
         placeholder="Pohvale, kritike, prijedlozi..."></textarea>
+      </label>
       <button id="kontaktButton" type="submit">Pošalji</button>
     </form>
   </main>
 </MainLayout>
+
+<style>
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-400);
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-000);
+    padding: var(--padding-400);
+  }
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-200);
+  }
+  input, textarea {
+    padding: var(--padding-100);
+  }
+  button {
+    font-size: var(--fontsize-600);
+    padding: var(--padding-100);
+    background-color: var(--color-highlight);
+    color: var(--color-neutral-000);
+    border: none;
+    border-radius: var(--borderradius-button);
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+</style>
