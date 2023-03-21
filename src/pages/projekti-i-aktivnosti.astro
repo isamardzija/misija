@@ -3,6 +3,13 @@ const title = "Projekti i aktivnosti";
 
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
+
+
+
+  let data = await fetch("https://cms.udrugamisija.hr/api/posts?where[category.name][equals]=Projects");
+  let projects = await data.json();
+
+
 ---
 
 <MainLayout title={title}>
@@ -11,5 +18,26 @@ import Hero from "../components/Hero.astro";
     subtitle={"MiSiJa iza sebe ima brojne projekte i aktivnosti."}
   />
   <h2>Projekti</h2>
+  {projects.docs.map((post) => (
+
+    <article>
+      <h3>{post.title}</h3>
+      <span>Autor: {post.author.name}</span>
+      <span>{post.date}</span>
+      <img src={`https://cms.udrugamisija.hr/media/${post.image.filename}`} /> 
+      <p>{post.content}</p>
+      </article>
+      ))}
   <h2>Aktivnosti</h2>
 </MainLayout>
+
+<style>
+
+    article {
+        flex-basis: max(33%, 500px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+</style>

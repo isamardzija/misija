@@ -4,7 +4,7 @@ const title = "Novosti";
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero.astro";
 
-const res = await fetch("https://cms.udrugamisija.hr/api/posts");
+const res = await fetch("https://cms.udrugamisija.hr/api/posts?where[category.name][equals]=News");
 const posts = await res.json();
 ---
 
