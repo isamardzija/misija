@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 
   return posts.docs.map((post) => {
     return {
-      params: { slug: post.title.split(" ").join("-").toLowerCase() },
+      params: { slug: post.slug },
       props: { title: post.title, content: post.content, image: post.image.filename, author: post.author.name, date: post.createdAt  },
     };
   });

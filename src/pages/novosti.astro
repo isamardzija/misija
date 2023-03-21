@@ -20,7 +20,7 @@ const posts = await res.json();
           <span>Autor: {post.author.name}</span>
           <span>{post.createdAt}</span>
           <p>{post.content.slice(0, 200)}...</p>
-          <a href={`novosti/${post.title.split(" ").join("-").toLowerCase()}`}>Pročitaj više...</a>
+          <a href={`novosti/${post.slug}`}>Pročitaj više...</a>
         </article>
       ))
     }
