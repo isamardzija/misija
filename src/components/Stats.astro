@@ -13,7 +13,7 @@ const { stat1, stat2, stat3, stat4 } = Astro.props;
   .container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap-200);
+    gap: var(--gap-400);
     padding: var(--padding-400);
     background-color: var(--color-neutral-900);
     color: var(--color-neutral-000);
@@ -25,10 +25,11 @@ const { stat1, stat2, stat3, stat4 } = Astro.props;
     flex-basis: calc(50% - var(--gap-200));
     display: flex;
     flex-direction: column;
+    font-size: var(--fontsize-600);
     text-align: center;
   }
   .number {
     font-weight: var(--fontweight-600);
-    font-size: var(--fontsize-600);
+    font-size: var(--fontsize-800);
   }
 </style>
