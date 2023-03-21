@@ -1,32 +1,35 @@
 ---
-const {text} = Astro.props
+const { text } = Astro.props;
 ---
-<section >
-    <h2>{text}</h2>
-    <a href="/uclani-se">Pridruži se</a>
-  </section>
 
-  <style>
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap-200)
-    }
-    h2 {
-      text-align: center;
-    }
-    a {      
-      font-size: var(--fontsize-600);
-      font-weight: var(--fontweight-600);
-      text-align: center;
-      text-transform: uppercase;
-      color: var(--color-neutral-000);
-      background-color: var(--color-highlight);
-      border-radius: var(--borderradius-button);
-      padding: var(--padding-200) var(--padding-400);
-      text-decoration: none;
-    }
-    a:hover {
-      scale: 1.02;
-    }
-  </style>
+<section>
+  <h2>{text}</h2>
+  <a href="/uclani-se">Pridruži se</a>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-200);
+    max-width: 600px;
+    margin: auto;
+  }
+  h2 {
+    text-align: center;
+  }
+  a {
+    font-size: var(--fontsize-600);
+    font-weight: var(--fontweight-600);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-neutral-000);
+    background-color: var(--color-highlight);
+    border-radius: var(--borderradius-button);
+    padding: var(--padding-200) var(--padding-400);
+    text-decoration: none;
+  }
+  a:hover {
+    scale: 1.02;
+  }
+</style>

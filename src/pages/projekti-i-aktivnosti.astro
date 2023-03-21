@@ -22,24 +22,26 @@ import Hero from "../components/Hero.astro";
     {projects.docs.map((post) => (
       <article>
         <h3>{post.title}</h3>
-        <span>{post.date}</span>
+        <small>{new Date(post.publishedDate).toDateString()}</small>
         <img src={`https://cms.udrugamisija.hr/media/${post.image.filename}`} />
-        <span>Autor: {post.author.name}</span>
+        <small>Autor: {post.author.name}</small>
         <p>{post.content}</p>
         </article>
         ))}
   </section>
-  <h2>Aktivnosti</h2>
+  <section>
+    <h2>Aktivnosti</h2>
+  </section>
 </MainLayout>
 
 <style>
   section {
-    max-width: 1366px;
+    max-width: 600px;
     margin: auto;
   }
 
     article {
-        flex-basis: max(33%, 500px);
+        
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
