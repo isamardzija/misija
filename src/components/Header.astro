@@ -1,15 +1,19 @@
 ---
-import logo from '../images/branding/MiSiJa-logo.png'
-
+import logo from "../images/branding/MiSiJa-logo.png";
+import OpenMenu from "../images/icons/OpenMenu.svg";
+import CloseMenu from "../images/icons/CloseMenu.svg";
 ---
+
 <header>
   <nav>
-    <a href="/"><img src={logo} alt="Logo udruge MiSiJa"></a>
-    <ul>
+    <div class="top">
+      <a href="/"><img src={logo} alt="Logo udruge MiSiJa" /></a>
+      <button id="toggle"><img id="toggleIcon" src={OpenMenu} /></button>
+    </div>
+    <ul id="nav">
       <li><a href="/onama">O nama</a></li>
       <li>
-        <a href="/projekti-i-aktivnosti"
-          >Projekti i aktivnosti</a>
+        <a href="/projekti-i-aktivnosti">Projekti i aktivnosti</a>
       </li>
       <li><a href="/novosti">Novosti</a></li>
       <li><a href="/kontakt">Kontakt</a></li>
@@ -21,6 +25,17 @@ import logo from '../images/branding/MiSiJa-logo.png'
   header {
     padding: 1rem;
   }
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #toggle img {
+    height: 32px;
+    aspect-ratio: 1/1;
+    
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -30,11 +45,12 @@ import logo from '../images/branding/MiSiJa-logo.png'
     max-width: 100px;
   }
   ul {
+    display: flex;
     list-style-type: none;
     align-items: center;
-    display: flex;
     flex-direction: column;
     gap: var(--gap-200);
+    padding-top: var(--padding-400);
   }
   a {
     text-decoration: none;
@@ -43,12 +59,50 @@ import logo from '../images/branding/MiSiJa-logo.png'
     color: var(--color-neutral-900);
   }
   li a:hover {
-    border-bottom: 2px solid var(--color-highlight)
+    border-bottom: 2px solid var(--color-highlight);
   }
+  .hide {
+    display: none;
+  }
+  #toggle {
+    background: none;
+    border: none;
+    padding: var(--padding-100);
+  }
+  #toggle:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
 
   @media screen and (min-width: 768px) {
-    nav, ul {
+    nav,
+    ul {
       flex-direction: row;
     }
+    #toggle {
+      display: none;
+    }
   }
+
+
 </style>
+
+<script>
+  import CloseMenu from "../images/icons/CloseMenu.svg";
+  import OpenMenu from "../images/icons/OpenMenu.svg";
+
+
+  const toggleButton = document.querySelector('#toggle')
+  const toggleIcon = document.querySelector('#toggleIcon') as HTMLImageElement
+  const nav = document.querySelector('#nav')
+  console.log(window.innerWidth < 768)
+  window.innerWidth < 768 && nav.classList.add('hide')
+  toggleButton.addEventListener('click', () => {
+    console.log(nav.classList.toggle('hide'))
+    nav.classList.contains('hide') ? toggleIcon.src = OpenMenu :
+    toggleIcon.src = CloseMenu
+
+  })
+
+</script>
