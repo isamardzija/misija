@@ -1,24 +1,27 @@
 ---
-import InstagramIcon from "../images/icons/instagram.png"
-import FacebookIcon from "../images/icons/facebook.png"
-
+import InstagramIcon from "../images/icons/instagram.png";
+import FacebookIcon from "../images/icons/facebook.png";
+import TikTokIcon from "../images/icons/tiktok.webp";
 ---
+
 <footer>
   <nav>
     <ul>
       <li><a href="/onama">O nama</a></li>
       <li>
-        <a href="/projekti-i-aktivnosti"
-          >Projekti i aktivnosti</a
-        >
+        <a href="/projekti-i-aktivnosti">Projekti i aktivnosti</a>
       </li>
       <li><a href="/novosti">Novosti</a></li>
       <li><a href="/kontakt">Kontakt</a></li>
-      <li>
+      <li class="social">
         <a href="https://www.facebook.com/udrugamisija/"
           ><img src={FacebookIcon} alt="Facebook Logo" /></a
         ><a href="https://www.instagram.com/udrugamisija/"
-          ><img src={InstagramIcon} alt="Instagram logo" /></a>
+          ><img src={InstagramIcon} alt="Instagram logo" /></a
+        >
+        <a href="https://www.tiktok.com/@udrugamisija"
+          ><img src={TikTokIcon} alt="Instagram logo" /></a
+        >
       </li>
     </ul>
   </nav>
@@ -27,7 +30,6 @@ import FacebookIcon from "../images/icons/facebook.png"
 <style>
   footer {
     padding: 1rem;
-
   }
   ul {
     list-style-type: none;
@@ -35,7 +37,7 @@ import FacebookIcon from "../images/icons/facebook.png"
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: var(--gap-200)
+    gap: var(--gap-200);
   }
   img {
     height: 24px;
@@ -48,6 +50,10 @@ import FacebookIcon from "../images/icons/facebook.png"
     color: var(--color-neutral-900);
   }
   li a:hover {
-    border-bottom: 2px solid var(--color-highlight)
+    border-bottom: 2px solid var(--color-highlight);
+  }
+  .social {
+    display: flex;
+    gap: var(--gap-200);
   }
 </style>

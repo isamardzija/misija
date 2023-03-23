@@ -35,11 +35,18 @@ import Hero from "../components/Hero.astro";
 </MainLayout>
 
 <style>
+  h2{
+    text-align: center;
+    border-bottom: 2px solid var(--color-highlight);
+
+  }
   section {
     max-width: 600px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-400);
   }
-
     article {
         
         display: flex;
