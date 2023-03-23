@@ -25,6 +25,8 @@
 
   --borderradius-button: 8px;
   --borderradius-image: 12px;
+
+  --lineheight-paragraph: 2rem;
 }
 
 * {
